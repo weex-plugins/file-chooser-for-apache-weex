@@ -1,0 +1,35 @@
+<template>
+    <wxc-panel title="fileChooser API" type="primary">
+        <wxc-panel title="acceptType">
+            <text>{{acceptType}}</text>
+        </wxc-panel>
+        <wxc-panel title="uri">
+            <text>{{uri}}</text>
+        </wxc-panel>
+        <wxc-panel title="path">
+            <text>{{path}}</text>
+        </wxc-panel>
+        <wxc-button type="success" size="large" value="Choose File" onclick="{{clicked}}" style="width: 500px;"></wxc-button>
+    </wxc-panel>
+</template>
+
+<script>
+    require('weex-components');
+    module.exports = {
+        data: {
+            acceptType: 'image/*',
+            uri: '-',
+            path: '-'
+        },
+        methods: {
+            clicked: function () {
+                var me = this;
+                var fc = require('@weex-module/fileChooser');
+                fc.chooseFile(me.acceptType, function (e) {
+                    me.uri = e.uri;
+                    me.path = e.path;
+                });
+            }
+        }
+    }
+</script>

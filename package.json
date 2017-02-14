@@ -1,0 +1,14 @@
+{
+  "name": "weex-file-chooser",
+  "version": "0.1.0",
+  "description": "Weex file chooser plugin",
+  "keywords": [
+    "Weex",
+    "Plugin",
+    "file chooser"
+  ],
+  "license": "Apache 2.0",
+  "platform" : [
+    "android"
+  ]
+}
